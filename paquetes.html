@@ -22,7 +22,6 @@
             </div>
         </div>
     </header>
-
     <div class="sidebar" id="sidebar">
         <a href="dashboard.html" onclick="showSection('roles')"><i class="fa-solid fa-sitemap"></i>&nbsp;&nbsp;&nbsp;Roles</a>
         <a href="dashboard.html" onclick="showSection('users')">&nbsp;<i class="fa-solid fa-person"></i>&nbsp;&nbsp;&nbsp;Usuarios</a>
@@ -34,9 +33,7 @@
         <a href="paquetes.html" onclick="showSection('paquetes')"><i class="fa-solid fa-boxes-stacked"></i>&nbsp; Paquetes</a>
         <a href="tablas.html" onclick="showSection('medicion')"><i class="fa-solid fa-chart-line"></i>&nbsp;&nbsp;Medicion</a>
     </div>
-
     <main>
-        
         <section id="roles" class="content-section active">
             <h2>Paquetes</h2>
             <div class="users-controls">
@@ -48,27 +45,23 @@
                     <i class="fas fa-plus-circle"></i> Crear paquete
                 </button>
             </div>
-
             <section class="recipe-grid">
                 <div class="recipe-card">
                     <img src="https://img.freepik.com/vector-premium/habitacion-cama-escritorio-escritorio-libreria_895122-430.jpg">
                     <h2>Paquete 1</h2>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum eligendi natus quasi voluptate modi soluta unde quae voluptas sunt, incidunt laborum asperiores labore, accusamus exercitationem aut quas error excepturi vel?
                     </p>
-
                     <div class="UDDLT">
                         <div class="bot1">
                             <button class="add-role-btn" onclick="openModal('editRoleModal')">
                                 <i class="fas fa-edit"></i> actualizar
                             </button>
                         </div>
-
                         <div class="bot2">
                             <button class="add-role-btn" onclick="openModal('deleteRoleModal')">
                                 <i class="fas fa-trash"></i> eliminar
                             </button>
                         </div>
-
                         <div class="permission-item"></div>
                         <label class="switch">
                             <input type="checkbox" name="dashboard">
@@ -76,31 +69,22 @@
                         </label>
                     </div>
                     </div>
-
-                    
-                    
-
-
                 </div>
-
                 <div class="recipe-card">
                     <img src="https://img.freepik.com/vector-premium/habitacion-cama-escritorio-escritorio-libreria_895122-430.jpg">
                     <h2>Paquete 2</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, architecto esse. Sed quisquam blanditiis adipisci dicta mollitia voluptas voluptatum aut itaque placeat debitis facilis quod ad quibusdam, beatae modi.</quam></p>
-
                     <div class="UDDLT">
                         <div class="bot1">
                             <button class="add-role-btn" onclick="openModal('editRoleModal')">
                                 <i class="fas fa-edit"></i> actualizar
                             </button>
                         </div>
-
                         <div class="bot2">
                             <button class="add-role-btn" onclick="openModal('deleteRoleModal')">
                                 <i class="fas fa-trash"></i> eliminar
                             </button>
                         </div>
-
                         <div class="permission-item"></div>
                         <label class="switch">
                             <input type="checkbox" name="dashboard">
@@ -108,29 +92,22 @@
                         </label>
                     </div>
                     </div>
-
-
-                   
                 </div>
-
                 <div class="recipe-card">
                     <img src="https://img.freepik.com/vector-premium/ilustracion-dibujos-animados-dormitorio-cama-escritorio_895122-425.jpg" >
                     <h2>Paquete 3</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ipsum saepe eveniet nobis nihil sequi, perspiciatis id, ipsa neque labore fuga, tempora adipisci provident voluptas autem fugit animi veniam accusamus?</p>
-
                     <div class="UDDLT">
                         <div class="bot1">
                             <button class="add-role-btn" onclick="openModal('editRoleModal')">
                                 <i class="fas fa-edit"></i> actualizar
                             </button>
                         </div>
-
                         <div class="bot2">
                             <button class="add-role-btn" onclick="openModal('deleteRoleModal')">
                                 <i class="fas fa-trash"></i> eliminar
                             </button>
                         </div>
-
                         <div class="permission-item"></div>
                         <label class="switch">
                             <input type="checkbox" name="dashboard">
@@ -138,16 +115,10 @@
                         </label>
                     </div>
                     </div>
-
-                    
-
                 </div>
-
             </section>
         </section>
-
     </main>
-
     <div id="createRoleModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('createRoleModal')">&times;</span>
@@ -166,7 +137,6 @@
                             <option value="3">3</option>
                         </select>
                     </div>
-
                     <div class="form-group">
                         <label for="roleStatus">Id servicio:</label>
                         <select id="roleStatus" class="linea" linea="roleStatus" required>
@@ -174,14 +144,12 @@
                             <option value="2">2</option>
                             <option value="3">3</option>
                         </select>
-                
                     </div>
                 </div>
                 <button type="submit">Guardar</button>
             </form>
         </div>
     </div>
-
     <div id="editRoleModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('editRoleModal')">&times;</span>
@@ -200,7 +168,6 @@
                             <option value="inactivo">Inactivo</option>
                         </select>
                     </div>
-                   
                     <div class="form-group">
                         <label for="roleStatus">Nuevo Id habitacion:</label>
                         <select id="roleStatus" name="roleStatus" required>
@@ -209,7 +176,6 @@
                             <option value="3">3</option>
                         </select>
                     </div>
-
                     <div class="form-group">
                         <label for="roleStatus">Nuevo Id servicio:</label><br>
                         <select id="roleStatus" class="linea" linea="roleStatus" required>
@@ -217,14 +183,12 @@
                             <option value="2">2</option>
                             <option value="3">3</option>
                         </select>
-                
                     </div>
                 </div>
                 <button type="submit">Actualizar</button>
             </form>
         </div>
     </div>
-
     <div id="deleteRoleModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('deleteRoleModal')">&times;</span>
@@ -234,9 +198,6 @@
             <button onclick="closeModal('deleteRoleModal')">Cancelar</button>
         </div>
     </div>
-    
-
-
    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>
