@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Habitaciones.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+            <button class="toggle-btn" onclick="toggleSidebar()">&#9776;</button>
+            <h1>Addventure</h1>
+            <div class="profile-menu">
+                <button class="profile-btn" onclick="toggleProfileMenu()">
+                    <i class="fas fa-user-circle"></i>
+                </button>
+                <div class="profile-dropdown" id="profileDropdown">
+                    <a href="#myProfile">Mi perfil</a>
+                    <a href="#logout" onclick="logout()">Cerrar sesión</a>
+                </div>
+            </div>
+    </header>
+        <div class="sidebar" id="sidebar">
+            <a href="dashboard.html" onclick="showSection('roles')"><i class="fa-solid fa-sitemap"></i>&nbsp;&nbsp;&nbsp;Roles</a>
+            <a href="dashboard.html" onclick="showSection('users')">&nbsp;<i class="fa-solid fa-person"></i>&nbsp;&nbsp;&nbsp;Usuarios</a>
+                <a href="Habitacion.html" onclick="showSection('habitacion')"><i class="fa-solid fa-bed " style="margin-right: 8px;"></i>Habitaciones</a>
+                <a href="Inmuebles.html" onclick="showSection('inmuebles')"><i class="fa-solid fa-chair" style="margin-right: 8px;"></i>&nbsp;&nbsp;Inmuebles</a>
+                <a href="Servicios.html" onclick="showSection('servicios')"><i class="fa-solid fa-person-swimming" style="margin-right: 8px;"></i>&nbsp;Servicios</a>
+            <a href="reserva.html" onclick="showSection('reserva')"><i class="fa-solid fa-house-user">&nbsp;</i>&nbsp;&nbsp;Reserva</a>
+            <a href="reserva.html" onclick="showSection('abono')"><i class="fa-solid fa-money-check-dollar">&nbsp;</i>&nbsp;&nbsp;Abono</a>
+            <a href="paquetes.html" onclick="showSection('paquetes')"><i class="fa-solid fa-boxes-stacked"></i>&nbsp; Paquetes</a>
+            <a href="Tablas.html" onclick="showSection('medicion')"><i class="fa-solid fa-chart-line"></i>&nbsp;&nbsp;Medicion</a>
+        </div>
+    <main>
+        <form id="searchForm">
+            <select name="" id="roomNumber" >
+                <option value="0">Seleccione el numero de habitacion</option>
+                <option value="1">Habitacion 1</option>
+                <option value="2">Habitacion 2</option>
+                <option value="3">Habitacion 3</option>
+                <option value="4">Habitacion 4</option>
+                <option value="5">Habitacion 5</option>
+                <option value="6">Habitacion 6</option>
+                <option value="7">Habitacion 7</option>
+                <option value="8">Habitacion 8</option>
+                <option value="9">Habitacion 9</option>
+                <option value="10">Habitacion 10</option>
+                <option value="11">Habitacion 11</option>
+                <option value="12">Habitacion 12</option>
+            </select>
+            <button type="submit" class="buscar">Buscar</button>
+            <select name="" id="roomNumber" >
+                <option value="0">Seleccione el Tipo de habitacion</option>
+                <option value="lujo">Habitacion de lujo</option>
+                <option value="doble">Habitacion doble</option>
+                <option value="estandar">Habitacion estandar</option>
+            </select>
+                <button type="submit" class="buscar">Buscar</button>
+                <select name="" id="roomNumber" >
+                <option value="0">Seleccione el Servicio</option>
+                <option value="Senderismo">Excursiones de senderismo </option>
+                <option value="Kayak">Tours de kayak</option>
+                <option value="Bungee">Bungee jumping</option>
+                <option value="Escalada">Escalada en roca</option>
+                <option value="Bici">Tours en bicicleta de montaña</option>
+                <option value="Raft">Rafting</option>
+                <option value="Tiro">Tirolina</option>
+                <option value="Paddle">Paddleboard</option>
+                <option value="Caballo">Rustas a caballo</option>
+                <option value="Pesca">Pesca deportiva </option>
+                </select>
+                <button type="submit" class="buscar">Buscar</button>
+
+        </form>
+        <section class="Menu">
+            <section class="botones2">
+                <i id="btnEditarHabitacion" class="fa-solid fa-pen-to-square fa-2xl" style="cursor: pointer; margin-left: 220px;padding-top: 20px;"></i>
+                <i id="openAddRoomModal" class="fa-solid fa-plus fa-2xl"style="cursor: pointer;margin-left:30px;margin-right:30px;"></i>
+                <i id="btnEliminarHabitacion"class="fa-solid fa-trash fa-2xl"style="cursor: pointer;"></i>
+            </section>
+            <article class="disponible">
+                <h2>Habitación 1</h2>
+                <div class="switch-container">
+                    <input type="checkbox" id="switch1">
+                    <label for="switch1" class="lbl"></label>
+                </div>
+                <a><img src="https://www.sofitelbarucalablanca.com/wp-content/uploads/sites/19/2023/04/DUF_8644-v-ok-1170x780.jpg" alt=""></a>
+            </article>
+            
+            <article class="disponible">
+                <h2>Habitación 2</h2>
+                <div class="switch-container">
+                    <input type="checkbox" id="switch2">
+                    <label for="switch2" class="lbl"></label>
+                </div>
+                <a><img src="https://images.squarespace-cdn.com/content/v1/600b53d0d5ef08628d370b52/1611786644927-BBWQY1F8Y9QOQFW1GPM6/HABITACION+RUSTICA+8+LA+CASA+DEL+RECTOR.jpg" alt=""></a>
+            </article>
+            
+            <article>
+                <h2>Habitación 3</h2>
+                <div class="switch-container">
+                    <input type="checkbox" id="switch3">
+                    <label for="switch3" class="lbl"></label>
+                </div>
+                <a href=""><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs2O6F-uqu6N2Tvn0s_nVWCa7cpECCVSHO4w&s" alt=""></a>
+            </article>
+            
+            <article>
+                <h2>Habitación 4</h2>
+                <div class="switch-container">
+                    <input type="checkbox" id="switch4">
+                    <label for="switch4" class="lbl"></label>
+                </div>
+                <a href=""><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeULdyNjRHSUN-O90J7EOA_UuEVuIUTIlHxw&s" alt=""></a>
+            </article>
+            
+            <article class="disponible">
+                <h2>Habitación 5</h2>
+                <div class="switch-container">
+                    <input type="checkbox" id="switch5">
+                    <label for="switch5" class="lbl"></label>
+                </div>
+                <a><img src="https://i.pinimg.com/originals/8f/a5/71/8fa571bf5e890bdbe1a292acc3052604.jpg" alt=""></a>
+            </article>
+            
+            <article class="disponible">
+                <h2>Habitación 6</h2>
+                <div class="switch-container">
+                    <input type="checkbox" id="switch6">
+                    <label for="switch6" class="lbl"></label>
+                </div>
+                <a><img src="https://hosteriavilladecastro.com/wp-content/uploads/2019/01/IMG_2335.jpeg" alt=""></a>
+            </article>
+        </section>
+    </main>
+    <div id="addRoomModal" class="modal-room">
+        <div class="modal-content-room">
+            <h2>Agregar Habitación</h2>
+            <form id="addRoomForm">
+                <label for="">Ingrese el numero de habitacion</label><br>
+                <input type="text" placeholder="Ejem: Habitacion 1" required><br>
+                <label for="">Inserte una imagen de la habitacion</label><br>
+                <input type="file" class="imagen" required><br>
+                <label for="">Piso de la habitacion</label><br>
+                <select name="" id="" required>
+                    <option value="Piso 1">Piso 1</option>
+                    <option value="Piso 2">Piso 2</option>
+                    <option value="Piso 3">Piso 3</option>
+                    <option value="Piso 4">Piso 4</option>
+                </select><br>
+                <label for="">Tipo de habitacion</label><br>
+                <select name="roomType" id="roomType" required>
+                    <option value="lujo">Habitación de lujo</option>
+                    <option value="doble">Habitación doble</option>
+                    <option value="estandar">Habitación estándar</option>
+                </select><br>
+                <label for="">Agregue una Descripcion</label><br>
+                <textarea name="" id="" required></textarea><br>
+                <button type="button" class="next-room2">Cancelar</button>
+                <button type="submit" class="next-room">Siguiente</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="addFurnitureModal" class="modal-furniture">
+        <div class="modal-content-furniture">
+            <h2>Agregar Inmuebles</h2>
+            <form id="addFurnitureForm">
+                <label for="">Introduce los inmuebles que tiene</label><br>
+                <input type="text" id="furnitureItem" placeholder="Introduce un inmueble"><br>
+                <input type="text" id="furnitureItem" placeholder="Introduce un inmueble"><br>
+                <input type="text" id="furnitureItem" placeholder="Introduce un inmueble"><br>
+                <input type="text" id="furnitureItem" placeholder="Introduce un inmueble"><br>
+                <input type="text" id="furnitureItem" placeholder="Introduce un inmueble"><br>
+                <input type="text" id="furnitureItem" placeholder="Introduce un inmueble"><br>
+                <input type="text" id="furnitureItem" placeholder="Introduce un inmueble"><br>
+                <input type="text" id="furnitureItem" placeholder="Introduce un inmueble"><br>
+                <input type="text" id="furnitureItem" placeholder="Introduce un inmueble"><br>
+                <input type="text" id="furnitureItem" placeholder="Introduce un inmueble"><br>
+                <input type="text" id="furnitureItem" placeholder="Introduce un inmueble"><br>
+                <input type="text" id="furnitureItem" placeholder="Introduce un inmueble"><br>
+                <button type="button" class="next-room2">Cancelar</button>
+                <button type="submit" class="next-room">Finalizar</button>
+            </form>
+        </div>
+    </div>
+    <div id="myModal" class="modal">
+        
+        <div class="modal-content">
+            <section class="inm">
+                <h2>Inmuebles de la habitacion</h2>
+                <form id="searchForm">
+                    <input type="text" id="" placeholder="Introduce un inmueble">
+                    <button type="submit" class="buscar">Buscar</button>
+                </form>    
+                <ul>
+                    <li>Cama cómoda</li>
+                    <li>Ropa de cama de alta calidad</li>
+                    <li>Mesitas de noche</li>
+                    <li>Lámparas decorativas</li>
+                    <li>Ducha privada</li>
+                    <li>Toallas y albornoces de lujo</li>
+                    <li>Espejo de cuerpo entero</li>
+                    <li>Armario o perchero</li>
+                    <li>Alfombra o tapete decorativo</li>
+                    <li>Escritorio (con sillas)</li>
+                    <li>Cojines y almohadones decorativos</li>
+                    <li>Área de estar (con sillones)</li>
+                    <li>Calefacción</li>
+                    <li>Iluminación ambiental </li>
+                    <li>Conexión eléctrica</li>
+                    <button>Ver mas</button>
+                </ul>
+            </section>
+            <section class="botones">
+                <i id="btnEditarInmueble" class="fa-solid fa-pen-to-square fa-2xl" style="cursor: pointer; margin-left: 40px;margin-right: 30px; padding-top: 20px;"></i>
+                <i id="btnEliminarInmueble" class="fa-solid fa-trash fa-2xl" style="cursor: pointer;padding-top: 20px;"></i>
+            </section><br>
+            <section class="tip">
+                <h2>Tipo de habitacion</h2> 
+                <h3>Habitacion De Lujo</h3>
+                <p>
+                    Descubre el encanto de una habitación de lujo en nuestro glamping, donde la naturaleza se fusiona con la comodidad. Relájate en una cama king size con ropa de cama de alta calidad, disfruta de una ducha privada al aire libre, y sumérgete en el ambiente sereno creado por iluminación suave y detalles cuidadosamente seleccionados. Con un área de estar elegante, calefacción para las noches frescas y todas las comodidades modernas, tu estancia será una experiencia inolvidable de lujo y conexión con la naturaleza.</p>
+            </section>
+            <section class="botones">
+                <i class="fa-solid fa-pen-to-square fa-2xl"style="cursor: pointer; margin-left: 40px;margin-right: 30px;padding-top: 20px;" id="btnEditarTipoHabitacion"></i>
+                <i class="fa-solid fa-trash fa-2xl" style="cursor: pointer;padding-top: 20px;" id="btnEliminarTipoHabitacion"></i>
+            </section><br>
+            <section class="serv">
+                <h2>Servicios</h2>
+                <ul>
+                    <li>Electricidad</li>
+                    <li>Ventilacion</li>
+                    <li>Calefaccion</li>
+                    <li>Wi-Fi</li>
+                    <li>Mini nevera</li>
+                    <li>Servicio de té y café</li>
+                    <li>Caja fuerte</li>
+                    <li>Desayuno incluido</li>
+                </ul>
+                <h2 class="serv2">Servicios extras con deportes extremos</h2>
+                <ul>
+                    <li>Excursiones de senderismo</li>
+                    <li>Tours de kayak</li>
+                    <li>Bungee jumping</li>
+                    <li>Escalada en roca</li>
+                    <li>Tours en bicicleta de montaña</li>
+                    <li>Rafting</li>
+                    <li>Tirolina</li>
+                    <li>Paddleboard</li>
+                    <li>Rutas a caballo</li>
+                    <li>Pesca deportiva</li>
+                </ul>
+            </section>
+            <section class="botones">
+                <i class="fa-solid fa-pen-to-square fa-2xl"style="cursor: pointer; margin-left: 40px;margin-right: 30px;padding-top: 20px;" id="btnEditarServicio"></i>
+                <i class="fa-solid fa-trash fa-2xl" style="cursor: pointer;padding-top: 20px;"  id="btnEliminarServicio"></i>
+            </section>
+            <section class="enviar">
+                <input type="submit"value="Registrarme" class="btn-registrarme">
+            </section>
+        </div>
+    </div>
+<div id="modalEditarHabitacion" class="modal-custom">
+    <div class="contenido-modal">
+        <h2>Editar Habitación</h2>
+        <form id="formEditarHabitacion">
+            <label for="">Seleccione el numero de habitacion:</label>
+            <select name="" id="roomNumber" required>
+                <option value="1">Habitacion 1</option>
+                <option value="2">Habitacion 2</option>
+                <option value="3">Habitacion 3</option>
+                <option value="4">Habitacion 4</option>
+                <option value="5">Habitacion 5</option>
+                <option value="6">Habitacion 6</option>
+                <option value="7">Habitacion 7</option>
+                <option value="8">Habitacion 8</option>
+                <option value="9">Habitacion 9</option>
+                <option value="10">Habitacion 10</option>
+                <option value="11">Habitacion 11</option>
+                <option value="12">Habitacion 12</option>
+            </select><br>
+            <label for="estadoHabitacion">Estado de la Habitación:</label>
+            <select id="estadoHabitacion" >
+                <option value="Disponible">Disponible</option>
+                <option value="Ocupada">Ocupada</option>
+                <option value="Mantenimiento">Mantenimiento</option>
+            </select><br>
+            <label for="pisoHabitacion">Piso:</label>
+            <select id="pisoHabitacion" >
+                <option value="1">Piso 1</option>
+                <option value="2">Piso 2</option>
+                <option value="3">Piso 3</option>
+                <option value="4">Piso 4</option>
+            </select><br>
+            <label for="imagenHabitacion">Imagen de la Habitación:</label>
+            <input type="file" id="imagenHabitacion" class="input-imagen" required><br><br><br>
+            <label for="descripcionHabitacion">Descripción:</label><br>
+            <textarea id="descripcionHabitacion" rows="4" placeholder="Descripción de la habitación..." required></textarea><br>
+            <label for="tipoHabitacion">Tipo de Habitación:</label>
+            <select id="tipoHabitacion" >
+                <option value="lujo">Habitación de lujo</option>
+                <option value="doble">Habitación doble</option>
+                <option value="estandar">Habitación estándar</option>
+            </select><br>
+            <button type="button" class="btn-cancelar">Cancelar</button>
+            <button type="submit" class="btn-guardar">Guardar Cambios</button>
+        </form>
+    </div>
+</div>
+<div id="modalEliminarHabitacion" class="modal-eliminar-habitacion">
+    <div class="modal-content-eliminar-habitacion">
+        <h2>Eliminar Habitación</h2>
+        <label for="">Seleccione la habitacion</label>
+        <select name="" id="roomNumber" required>
+            <option value="1">Habitacion 1</option>
+            <option value="2">Habitacion 2</option>
+            <option value="3">Habitacion 3</option>
+            <option value="4">Habitacion 4</option>
+            <option value="5">Habitacion 5</option>
+            <option value="6">Habitacion 6</option>
+            <option value="7">Habitacion 7</option>
+            <option value="8">Habitacion 8</option>
+            <option value="9">Habitacion 9</option>
+            <option value="10">Habitacion 10</option>
+            <option value="11">Habitacion 11</option>
+            <option value="12">Habitacion 12</option>
+        </select><br>
+        <p>¿Estás seguro de que deseas eliminar la siguiente habitación?</p>
+        <div class="warning-box-eliminar-habitacion">
+            <p style="color: red; font-weight: bold;">Advertencia: Esta acción no se puede deshacer. La habitación será eliminada permanentemente.</p>
+        </div>
+        <label>
+            <input type="checkbox" id="checkboxConfirmarEliminacion"> Estoy seguro de que quiero eliminar esta habitación.
+        </label><br><br>
+        <div class="botones-eliminar-habitacion">
+            <button class="btn-cancelar-eliminar-habitacion">Cancelar</button>
+            <button class="btn-aceptar-eliminar-habitacion" disabled>Aceptar</button>
+        </div>
+    </div>
+</div>
+<div id="modalEditarInmueble" class="modal">
+    <div class="modal-content">
+        
+        <h2>Editar Inmueble</h2>
+        <form id="formEditarInmueble">
+            <label for="nombreInmueble">Seleccione el inmueble</label>
+            <select type="text" id="nombreInmueble" name="nombreInmueble" required>
+                    <option value="">Cama cómoda</option>
+                    <option value="">Ropa de cama de alta calidad</option>
+                    <option value="">Mesitas de noche</option>
+                    <option value="">Lámparas decorativas</option>
+                    <option value="">Ducha privada</option>
+                    <option value="">Toallas y albornoces de lujo</option>
+                    <option value="">Espejo de cuerpo entero</option>
+                    <option value="">Armario o perchero</option>
+                    <option value="">Alfombra o tapete decorativo</option>
+                    <option value="">Escritorio (con sillas)</option>
+                    <option value="">Cojines y almohadones decorativos</option>
+                    <option value="">Área de estar (con sillones)</option>
+                    <option value="">Calefacción</option>
+                    <option value="">Iluminación ambiental </option>
+                    <option value="">Conexión eléctrica</option>
+            </select><br>
+            
+            <label for="cantidadInmueble">Cantidad:</label>
+            <input type="number" id="cantidadInmueble" name="cantidadInmueble" required><br>
+            <button type="submit" class="btn-guardar">Guardar cambios</button>
+            <button type="button" class="btn-cancelar">Cancelar</button>
+        </form>
+    </div>
+</div>
+<div id="modalEliminarInmueble" class="modal">
+    <div class="modal-content">
+        <h2>Eliminar Inmueble</h2>
+        <label for="nombreInmueble">Seleccione el inmueble</label>
+            <select type="text" id="nombreInmueble" name="nombreInmueble" required><option value="">Cama cómoda</option>
+                <option value="">Ropa de cama de alta calidad</option>
+                <option value="">Mesitas de noche</option>
+                <option value="">Lámparas decorativas</option>
+                <option value="">Ducha privada</option>
+                <option value="">Toallas y albornoces de lujo</option>
+                <option value="">Espejo de cuerpo entero</option>
+                <option value="">Armario o perchero</option>
+                <option value="">Alfombra o tapete decorativo</option>
+                <option value="">Escritorio (con sillas)</option>
+                <option value="">Cojines y almohadones decorativos</option>
+                <option value="">Área de estar (con sillones)</option>
+                <option value="">Calefacción</option>
+                <option value="">Iluminación ambiental </option>
+                <option value="">Conexión eléctrica</option></select>
+        <p>¿Está seguro de que desea eliminar este inmueble?</p>
+        <input type="checkbox" id="checkboxConfirmarEliminacion">
+        <label for="checkboxConfirmarEliminacion">Confirmar eliminación</label>
+        <br>
+        <button id="btnAceptarEliminar" class="btn-guardar" disabled>Aceptar</button>
+        <button class="btn-cancelar">Cancelar</button>
+    </div>
+</div>
+<div id="modalEditarTipoHabitacion" class="modal">
+    <div class="modal-content">
+        <h2>Editar Tipo de Habitación</h2>
+        <form id="formEditarTipoHabitacion">
+            <label for="nombreTipoHabitacion">Seleccione el tipo de habitacion</label>
+            <select type="text" id="nombreTipoHabitacion" name="nombreTipoHabitacion" required>
+                    <option value="">Habitación de lujo</option>
+                    <option value="">Habitación doble</option>
+                    <option value="">Habitación estándar</option>
+            </select><br>
+            <label for="cantidadTipoHabitacion">Descripcion nueva:</label><br>
+            <textarea name="" id=""></textarea><br>
+
+            <button type="submit" class="btn-guardar">Guardar cambios</button>
+            <button type="button" class="btn-cancelar">Cancelar</button>
+        </form>
+    </div>
+</div>
+<div id="modalEliminarTipoHabitacion" class="modal">
+    <div class="modal-content">
+        <h2>Eliminar Tipo de Habitación</h2>
+        <label for="nombreTipoHabitacion">Seleccione el tipo de habitacion</label>
+            <select type="text" id="nombreTipoHabitacion" name="nombreTipoHabitacion" required>
+                    <option value="">Habitación de lujo</option>
+                    <option value="">Habitación doble</option>
+                    <option value="">Habitación estándar</option>
+            </select><br>
+        <p>¿Está seguro de que desea eliminar este tipo de habitación?</p>
+        <input type="checkbox" id="checkboxConfirmarEliminacionTipoHabitacion">
+        <label for="checkboxConfirmarEliminacionTipoHabitacion">Confirmar eliminación</label>
+        <br>
+        <button id="btnAceptarEliminarTipoHabitacion" class="btn-guardar" disabled>Aceptar</button>
+        <button class="btn-cancelar">Cancelar</button>
+    </div>
+</div>
+<div id="modalEditarServicio" class="modal">
+    <div class="modal-content">
+        <h2>Editar Servicio</h2>
+        <form id="formEditarServicio">
+            <label for="nombreServicio">Seleccione el Servicio:</label>
+            <select type="text" id="nombreServicio" name="nombreServicio" required>
+                <option value="">Excursiones de senderismo </option>
+                <option value="">Tours de kayak</option>
+                <option value="">Bungee jumping</option>
+                <option value="">Escalada en roca</option>
+                <option value="">Tours en bicicleta de montaña</option>
+                <option value="">Rafting</option>
+                <option value="">Tirolina</option>
+                <option value="">Paddleboard</option>
+                <option value="">Rustas a caballo</option>
+                <option value="">Pesca deportiva </option>
+            </select><br>
+            
+            <label for="cantidadServicio">Desactivar?</label><br>
+            <input type="checkbox" id="cantidadServicio" name="cantidadServicio" class="checkboxConfirmarEliminacionServicio" required>
+            <button type="submit" class="btn-guardar">Guardar cambios</button>
+            <button type="button" class="btn-cancelar">Cancelar</button>
+        </form>
+    </div>
+</div>
+<div id="modalEliminarServicio" class="modal">
+    <div class="modal-content">
+        <h2>Eliminar Servicio</h2>
+        <label for="nombreServicio">Seleccione el Servicio:</label>
+            <select type="text" id="nombreServicio" name="nombreServicio" required>
+                <option value="">Excursiones de senderismo </option>
+                <option value="">Tours de kayak</option>
+                <option value="">Bungee jumping</option>
+                <option value="">Escalada en roca</option>
+                <option value="">Tours en bicicleta de montaña</option>
+                <option value="">Rafting</option>
+                <option value="">Tirolina</option>
+                <option value="">Paddleboard</option>
+                <option value="">Rustas a caballo</option>
+                <option value="">Pesca deportiva </option>
+            </select><br>
+        <p>¿Está seguro de que desea eliminar este servicio?</p>
+        <input type="checkbox" id="checkboxConfirmarEliminacionServicio">
+        <label for="checkboxConfirmarEliminacionServicio">Confirmar eliminación</label>
+        <br>
+        <button id="btnAceptarEliminarServicio" class="btn-guardar" disabled>Aceptar</button>
+        <button class="btn-cancelar">Cancelar</button>
+    </div>
+</div>
+    <script src="modal.js"></script>
+</body>
+</html>

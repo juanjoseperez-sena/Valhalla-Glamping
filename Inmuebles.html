@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Habitaciones.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="Habitacion.html">
+    <title>Document</title>
+</head>
+<body style="overflow-x: hidden;">
+    <header>
+            <button class="toggle-btn" onclick="toggleSidebar()">&#9776;</button>
+            <h1>Addventure</h1>
+            <div class="profile-menu">
+                <button class="profile-btn" onclick="toggleProfileMenu()">
+                    <i class="fas fa-user-circle"></i>
+                </button>
+                <div class="profile-dropdown" id="profileDropdown">
+                    <a href="#myProfile">Mi perfil</a>
+                    <a href="#logout" onclick="logout()">Cerrar sesión</a>
+                </div>
+            </div>
+    </header>
+        <div class="sidebar" id="sidebar">
+            <a href="dashboard.html" onclick="showSection('roles')"><i class="fa-solid fa-sitemap"></i>&nbsp;&nbsp;&nbsp;Roles</a>
+            <a href="dashboard.html" onclick="showSection('users')">&nbsp;<i class="fa-solid fa-person"></i>&nbsp;&nbsp;&nbsp;Usuarios</a>
+                <a href="Habitacion.html" onclick="showSection('habitacion')"><i class="fa-solid fa-bed " style="margin-right: 8px;"></i>Habitaciones</a>
+                <a href="Inmuebles.html" onclick="showSection('inmuebles')"><i class="fa-solid fa-chair" style="margin-right: 8px;"></i>&nbsp;&nbsp;Inmuebles</a>
+                <a href="Servicios.html" onclick="showSection('servicios')"><i class="fa-solid fa-person-swimming" style="margin-right: 8px;"></i>&nbsp;Servicios</a>
+            <a href="reserva.html" onclick="showSection('reserva')"><i class="fa-solid fa-house-user">&nbsp;</i>&nbsp;&nbsp;Reserva</a>
+            <a href="reserva.html" onclick="showSection('abono')"><i class="fa-solid fa-money-check-dollar">&nbsp;</i>&nbsp;&nbsp;Abono</a>
+            <a href="paquetes.html" onclick="showSection('paquetes')"><i class="fa-solid fa-boxes-stacked"></i>&nbsp; Paquetes</a>
+            <a href="Tablas.html" onclick="showSection('medicion')"><i class="fa-solid fa-chart-line"></i>&nbsp;&nbsp;Medicion</a>
+        </div>
+    <main>
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" placeholder="Buscar...">
+                <button type="submit">Buscar</button>
+            </div>
+        </div>
+        <i id="btnEditarInmueble" class="fa-solid fa-pen-to-square fa-2xl" style="cursor: pointer; margin-left: 800px; padding-top: 120px;"></i>
+        <i id="btnAgregarInmueble"class="fa-solid fa-plus fa-2xl"style="cursor: pointer;margin-left:30px;margin-right:30px;"></i>
+        <i id="btnEliminarInmueble" class="fa-solid fa-trash fa-2xl"style="cursor: pointer;"></i>
+        <section class="container">
+        <card>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpwo66pHs_-iU7p4FpZg75agbc2YqLS9aheg&s" alt="">
+            <h2>Cama Cómoda</h2>
+            <label for="">Cantidad</label>
+            <input type="number">
+        </card><br>
+        <card>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNVGfaDgy79vjnGGf_9V4baqAPSXSgCoWQDw&s" alt="">
+            <h2>Ropa de cama de alta calidad</h2>
+            <label for="">Cantidad</label>
+            <input type="number">
+        </card><br>
+        <card>
+            <img src="https://www.forja.com.co/wp-content/uploads/2022/05/mesa-de-noche-corning-ambiente.jpg" alt="">
+            <h2>Mesitas de noche</h2>
+            <label for="">Cantidad</label>
+            <input type="number">
+        </card><br>
+        <card>
+            <img src="https://images.sodimac.com/v3/assets/blt2f8082df109cfbfb/bltdebe77e7db1303d4/63dd1f9e14a2b44fa11df15e/LND-GC-176-PC-lamparas-mb.jpg" alt="">
+            <h2>Lamparas decorativas</h2>
+            <label for="">Cantidad</label>
+            <input type="number">
+        </card><br>
+        <card>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_E0iLiiyU6rD9GXBsobA2XuE3XAFwp4YIKA&s" alt="">
+            <h2>Ducha privada</h2>
+            <label for="">Cantidad</label>
+            <input type="number">
+        </card><br>
+        <card>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO8GNb0eNHasvNMIEigsNbhjgxzcpF-HWlSQ&s" alt="">
+            <h2>Toallas y abornoces de lujo</h2>
+            <label for="">Cantidad</label>
+            <input type="number">
+        </card><br>
+        <card>
+            <img src="https://imagedelivery.net/4fYuQyy-r8_rpBpcY7lH_A/falabellaCO/128573169_01/w=800,h=800,fit=pad" alt="">
+            <h2>Espejo de cuerpo entero</h2>
+            <label for="">Cantidad</label>
+            <input type="number">
+        </card><br>
+        <card>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7ozFQVdKuvsVxyeTLhzfCGb-_z9-he5YMew&s" alt="">
+            <h2>Armario o perchero</h2>
+            <label for="">Cantidad</label>
+            <input type="number">
+        </card><br>
+        <card>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS39ZL09khyvjs0Hfo8yslO_AjmeFz7HJs2g&s" alt="">
+            <h2>Alfombra o tapete decorativo</h2>
+            <label for="">Cantidad</label>
+            <input type="number">
+        </card><br>
+        <card>
+            <img src="https://media-cdn.tripadvisor.com/media/photo-s/05/5f/fa/bb/howard-johnson-hotel.jpg" alt="">
+            <h2>Escritorio (con sillas)</h2>
+            <label for="">Cantidad</label>
+            <input type="number">
+        </card><br>
+        <card>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3OWzGLJ1NEXLkV0fIqHHGEB2QNi8WwccPYw&s" alt="">
+            <h2>Cojines y almohadones decorativos</h2>
+            <label for="">Cantidad</label>
+            <input type="number">
+        </card><br>
+        <card>
+            <img src="https://png.pngtree.com/background/20230617/original/pngtree-contemporary-hotel-and-office-reception-area-with-3d-rendering-and-stylish-picture-image_3668210.jpg" alt="">
+            <h2>Area de estar(con sillones)</h2>
+            <label for="">Cantidad</label>
+            <input type="number">
+        </card><br>
+        <card>
+            <img src="https://media-cdn.tripadvisor.com/media/photo-s/06/7e/ca/56/hotel-costa-bahia.jpg" alt="">
+            <h2>Calefaccion</h2>
+            <label for="">Cantidad</label>
+            <input type="number">
+        </card><br>
+        <card>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNdZJq9J3-ODE_XDT09Bdj1UnBf_nwVRg8ug&s" alt="">
+            <h2>Iluminación ambiental</h2>
+            <label for="">Cantidad</label>
+            <input type="number">
+        </card><br>
+        <card>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1NPr2jPCsECFpihMTPUCWn2zxx18OBPxpIw&s" alt="">
+            <h2>Conexión electrica</h2>
+            <label for="">Cantidad</label>
+            <input type="number">
+        </card><br>
+    </section>
+</main>
+<div id="modalEditarInmueble" class="modal">
+    <div class="modal-content">
+        
+        <h2>Editar Inmueble</h2>
+        <form id="formEditarInmueble">
+            <label for="nombreInmueble">Seleccione el inmueble</label>
+            <select type="text" id="nombreInmueble" name="nombreInmueble" required>
+                    <option value="">Cama cómoda</option>
+                    <option value="">Ropa de cama de alta calidad</option>
+                    <option value="">Mesitas de noche</option>
+                    <option value="">Lámparas decorativas</option>
+                    <option value="">Ducha privada</option>
+                    <option value="">Toallas y albornoces de lujo</option>
+                    <option value="">Espejo de cuerpo entero</option>
+                    <option value="">Armario o perchero</option>
+                    <option value="">Alfombra o tapete decorativo</option>
+                    <option value="">Escritorio (con sillas)</option>
+                    <option value="">Cojines y almohadones decorativos</option>
+                    <option value="">Área de estar (con sillones)</option>
+                    <option value="">Calefacción</option>
+                    <option value="">Iluminación ambiental </option>
+                    <option value="">Conexión eléctrica</option>
+            </select><br>
+            
+            <label for="cantidadInmueble">Cantidad:</label>
+            <input type="number" id="cantidadInmueble" name="cantidadInmueble" required><br>
+            <button type="submit" class="btn-guardar">Guardar cambios</button>
+            <button type="button" class="btn-cancelar">Cancelar</button>
+        </form>
+    </div>
+</div>
+<div id="modalEliminarInmueble" class="modal">
+    <div class="modal-content">
+        <h2>Eliminar Inmueble</h2>
+        <label for="nombreInmueble">Seleccione el inmueble</label>
+            <select type="text" id="nombreInmueble" name="nombreInmueble" required><option value="">Cama cómoda</option>
+                <option value="">Ropa de cama de alta calidad</option>
+                <option value="">Mesitas de noche</option>
+                <option value="">Lámparas decorativas</option>
+                <option value="">Ducha privada</option>
+                <option value="">Toallas y albornoces de lujo</option>
+                <option value="">Espejo de cuerpo entero</option>
+                <option value="">Armario o perchero</option>
+                <option value="">Alfombra o tapete decorativo</option>
+                <option value="">Escritorio (con sillas)</option>
+                <option value="">Cojines y almohadones decorativos</option>
+                <option value="">Área de estar (con sillones)</option>
+                <option value="">Calefacción</option>
+                <option value="">Iluminación ambiental </option>
+                <option value="">Conexión eléctrica</option></select>
+        <p>¿Está seguro de que desea eliminar este inmueble?</p>
+        <input type="checkbox" id="checkboxConfirmarEliminacion">
+        <label for="checkboxConfirmarEliminacion">Confirmar eliminación</label>
+        <br>
+        <button id="btnAceptarEliminar" class="btn-guardar" disabled>Aceptar</button>
+        <button class="btn-cancelar">Cancelar</button>
+    </div>
+</div>
+<div id="modalAgregarInmueble" class="modal">
+    <div class="modal-content">
+        <h2>Agregar Inmueble</h2>
+        <label for="">Nombre del inmueble</label><br>
+        <input type="text" required><br>
+        <label for="">Cantidad del inmueble</label><br>
+        <input type="number"><br>
+        <label for="">Imagen del inmueble</label><br>
+        <input type="file"><br>
+        <button id="btnAceptarEliminar" class="btn-guardar" disabled>Aceptar</button>
+        <button class="btn-cancelar">Cancelar</button>
+    </div>
+</div>
+
+<script src="inmuebles.js"></script>
+</body>
+</html>

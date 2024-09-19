@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Habitaciones.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="Habitacion.html">
+    <title>Document</title>
+</head>
+<body style="overflow-x: hidden;">
+    <header>
+            <button class="toggle-btn" onclick="toggleSidebar()">&#9776;</button>
+            <h1>Addventure</h1>
+            <div class="profile-menu">
+                <button class="profile-btn" onclick="toggleProfileMenu()">
+                    <i class="fas fa-user-circle"></i>
+                </button>
+                <div class="profile-dropdown" id="profileDropdown">
+                    <a href="#myProfile">Mi perfil</a>
+                    <a href="#logout" onclick="logout()">Cerrar sesión</a>
+                </div>
+            </div>
+    </header>
+        <div class="sidebar" id="sidebar">
+            <a href="dashboard.html" onclick="showSection('roles')"><i class="fa-solid fa-sitemap"></i>&nbsp;&nbsp;&nbsp;Roles</a>
+        <a href="dashboard.html" onclick="showSection('users')">&nbsp;<i class="fa-solid fa-person"></i>&nbsp;&nbsp;&nbsp;Usuarios</a>
+            <a href="Habitacion.html" onclick="showSection('habitacion')"><i class="fa-solid fa-bed " style="margin-right: 8px;"></i>Habitaciones</a>
+            <a href="Inmuebles.html" onclick="showSection('inmuebles')"><i class="fa-solid fa-chair" style="margin-right: 8px;"></i>&nbsp;&nbsp;Inmuebles</a>
+            <a href="Servicios.html" onclick="showSection('servicios')"><i class="fa-solid fa-person-swimming" style="margin-right: 8px;"></i>&nbsp;Servicios</a>
+        <a href="reserva.html" onclick="showSection('reserva')"><i class="fa-solid fa-house-user">&nbsp;</i>&nbsp;&nbsp;Reserva</a>
+        <a href="reserva.html" onclick="showSection('abono')"><i class="fa-solid fa-money-check-dollar">&nbsp;</i>&nbsp;&nbsp;Abono</a>
+        <a href="paquetes.html" onclick="showSection('paquetes')"><i class="fa-solid fa-boxes-stacked"></i>&nbsp; Paquetes</a>
+        <a href="Tablas.html" onclick="showSection('medicion')"><i class="fa-solid fa-chart-line"></i>&nbsp;&nbsp;Medicion</a>
+        </div>
+        <main>
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" placeholder="Buscar...">
+                    <button type="submit">Buscar</button>
+                </div>
+            </div>
+        <i id="btnEditarServicio" class="fa-solid fa-pen-to-square fa-2xl" style="cursor: pointer; margin-left: 800px;margin-top: 100px;padding-top: 20px;"></i>
+        <i id="btnAgregarServicio"class="fa-solid fa-plus fa-2xl"style="cursor: pointer;margin-left:30px;margin-right:30px;"></i>
+        <i id="btnEliminarServicio" class="fa-solid fa-trash fa-2xl"style="cursor: pointer;"></i>
+        <section class="container">
+        <card>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeQLfiXgR5-bgtQ36hdgdTUubpfOYpsyX1Dg&s" alt="">
+            <h2>Excursiones de senderismo</h2>
+            <label for="">Disponible?</label>
+            <div class="switch-container" style="margin: auto;"></div>
+                    <input type="checkbox" id="switch7">
+                    <label for="switch7" class="lbl"></label>
+                </div>
+        </card><br>
+        <card>
+            <img src="https://santamartatrip.com/sites/default/files/cocoon/kayak-tour-chica.jpg" alt="">
+            <h2>Tours de Kayak</h2>
+            <label for="">Disponible?</label>
+            <div class="switch-container" style="margin: auto;">
+                    <input type="checkbox" id="switch8">
+                    <label for="switch8" class="lbl"></label>
+                </div>
+        </card><br>
+        <card>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcqArAKtMY9TWl5QGnA4VffufMRoB-zamJzA&s" alt="">
+            <h2>Bungee Jumping</h2>
+            <label for="">Disponible?</label>
+            <div class="switch-container" style="margin: auto;">
+                    <input type="checkbox" id="switch9">
+                    <label for="switch9" class="lbl"></label>
+                </div>
+        </card><br>
+        <card>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8ALiCDfkvmu1VyQ4QVSLRH6sURFv9jcBEvQ&s" alt="">
+            <h2>Escalada en Roca</h2>
+            <label for="">Disponible?</label>
+            <div class="switch-container" style="margin: auto;">
+                    <input type="checkbox" id="switch10">
+                    <label for="switch10" class="lbl"></label>
+                </div>
+        </card><br>
+        <card>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJbCzNcVmU1qa7hW7f7HvWOCtWOO0CcubdqQ&s" alt="">
+            <h2>Tours en Bicicleta de Montaña</h2>
+            <label for="">Disponible?</label>
+            <div class="switch-container" style="margin: auto;">
+                    <input type="checkbox" id="switch11">
+                    <label for="switch11" class="lbl"></label>
+                </div>
+        </card><br>
+        <card>
+            <img src="https://media.traveler.es/photos/622a11b662d4f113d6eb070c/16:9/w_2560%2Cc_limit/raf.jpg" alt="">
+            <h2>Rafting</h2>
+            <label for="">Disponible?</label>
+            <div class="switch-container" style="margin: auto;">
+                    <input type="checkbox" id="switch12">
+                    <label for="switch12" class="lbl"></label>
+                </div>
+        </card><br>
+        <card>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAWWhgwORXXdvW9tWTKj0EXoKK73qbITpNYA&s" alt="">
+            <h2>Tirolina</h2>
+            <label for="">Disponible?</label>
+            <div class="switch-container" style="margin: auto;">
+                    <input type="checkbox" id="switch13">
+                    <label for="switch13" class="lbl"></label>
+                </div>
+        </card><br>
+        <card>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF2YK-jaXCW2_6-Qm-g4Fd0Uy1D2u2iCZwGQ&s" alt="">
+            <h2>Paddleboard</h2>
+            <label for="">Disponible?</label>
+            <div class="switch-container" style="margin: auto;">
+                    <input type="checkbox" id="switch14">
+                    <label for="switch14" class="lbl"></label>
+                </div>
+        </card><br>
+        <card>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWkfiMeumgAMfYuhZpMnYdXHMWcUS3rM2GpQ&s" alt="">
+            <h2>Rustas a Caballo</h2>
+            <label for="">Disponible?</label>
+            <div class="switch-container" style="margin: auto;">
+                    <input type="checkbox" id="switch15">
+                    <label for="switch15" class="lbl"></label>
+                </div>
+        </card><br>
+        <card>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI3djRrCj9n7t7WlOyLOrhW7tmhl08NHllhA&s" alt="">
+            <h2>Pesca Deportiva</h2>
+            <label for="">Disponible?</label>
+            <div class="switch-container" style="margin: auto;">
+                    <input type="checkbox" id="switch16">
+                    <label for="switch16" class="lbl"></label>
+                </div>
+        </card><br>
+    </section>
+</main>
+<div id="modalEditarServicio" class="modal">
+    <div class="modal-content">
+        <h2>Editar Servicio</h2>
+        <form id="formEditarServicio">
+            <label for="nombreServicio">Seleccione el Servicio:</label>
+            <select type="text" id="nombreServicio" name="nombreServicio" required>
+                <option value="">Excursiones de senderismo </option>
+                <option value="">Tours de kayak</option>
+                <option value="">Bungee jumping</option>
+                <option value="">Escalada en roca</option>
+                <option value="">Tours en bicicleta de montaña</option>
+                <option value="">Rafting</option>
+                <option value="">Tirolina</option>
+                <option value="">Paddleboard</option>
+                <option value="">Rustas a caballo</option>
+                <option value="">Pesca deportiva </option>
+            </select><br>
+            
+            <label for="cantidadServicio">Desactivar?</label><br>
+            <input type="checkbox" id="cantidadServicio" name="cantidadServicio" class="checkboxConfirmarEliminacionServicio" required>
+            <button type="submit" class="btn-guardar">Guardar cambios</button>
+            <button type="button" class="btn-cancelar">Cancelar</button>
+        </form>
+    </div>
+</div>
+<div id="modalEliminarServicio" class="modal">
+    <div class="modal-content">
+        <h2>Eliminar Servicio</h2>
+        <label for="nombreServicio">Seleccione el Servicio:</label>
+            <select type="text" id="nombreServicio" name="nombreServicio" required>
+                <option value="">Excursiones de senderismo </option>
+                <option value="">Tours de kayak</option>
+                <option value="">Bungee jumping</option>
+                <option value="">Escalada en roca</option>
+                <option value="">Tours en bicicleta de montaña</option>
+                <option value="">Rafting</option>
+                <option value="">Tirolina</option>
+                <option value="">Paddleboard</option>
+                <option value="">Rustas a caballo</option>
+                <option value="">Pesca deportiva </option>
+            </select><br>
+        <p>¿Está seguro de que desea eliminar este servicio?</p>
+        <input type="checkbox" id="checkboxConfirmarEliminacionServicio">
+        <label for="checkboxConfirmarEliminacionServicio">Confirmar eliminación</label>
+        <br>
+        <button id="btnAceptarEliminarServicio" class="btn-guardar" disabled>Aceptar</button>
+        <button class="btn-cancelar">Cancelar</button>
+    </div>
+</div>
+<div id="modalAgregarServicio" class="modal">
+    <div class="modal-content" style="text-align: center;padding: 5px;">
+        <h2>Agregar Servicio</h2>
+        <label for="">Nombre del Servicio</label><br>
+        <input type="text" required><br>
+        <label for="">Imagen del Servicio</label><br>
+        <input type="file"><br>
+        <label for="">Disponibilidad</label>
+        <div class="switch-container" style="margin: auto;">
+            <input type="checkbox" id="switch19">
+            <label for="switch19" class="lbl"></label>
+        </div>
+        <button id="btnAceptarEliminar" class="btn-guardar" disabled>Aceptar</button>
+        <button class="btn-cancelar">Cancelar</button>
+    </div>
+</div>
+        <script src="servicios.js"></script>
+</body>
+</html>

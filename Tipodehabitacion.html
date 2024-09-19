@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Habitaciones.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="Habitacion.html">
+    <title>Document</title>
+</head>
+<body style="overflow-x: hidden;">
+    <header>
+            <button class="toggle-btn" onclick="toggleSidebar()">&#9776;</button>
+            <h1>Addventure</h1>
+            <div class="profile-menu">
+                <button class="profile-btn" onclick="toggleProfileMenu()">
+                    <i class="fas fa-user-circle"></i>
+                </button>
+                <div class="profile-dropdown" id="profileDropdown">
+                    <a href="#myProfile">Mi perfil</a>
+                    <a href="#logout" onclick="logout()">Cerrar sesión</a>
+                </div>
+            </div>
+    </header>
+        <div class="sidebar" id="sidebar">
+            <a href="dashboard.html" onclick="showSection('roles')"><i class="fa-solid fa-sitemap"></i>&nbsp;&nbsp;&nbsp;Roles</a>
+        <a href="dashboard.html" onclick="showSection('users')">&nbsp;<i class="fa-solid fa-person"></i>&nbsp;&nbsp;&nbsp;Usuarios</a>
+            <a href="Habitacion.html" onclick="showSection('habitacion')"><i class="fa-solid fa-bed " style="margin-right: 8px;"></i>Habitaciones</a>
+            <a href="Inmuebles.html" onclick="showSection('inmuebles')"><i class="fa-solid fa-chair" style="margin-right: 8px;"></i>&nbsp;&nbsp;Inmuebles</a>
+            <a href="Servicios.html" onclick="showSection('servicios')"><i class="fa-solid fa-person-swimming" style="margin-right: 8px;"></i>&nbsp;Servicios</a>
+        <a href="reserva.html" onclick="showSection('reserva')"><i class="fa-solid fa-house-user">&nbsp;</i>&nbsp;&nbsp;Reserva</a>
+        <a href="reserva.html" onclick="showSection('abono')"><i class="fa-solid fa-money-check-dollar">&nbsp;</i>&nbsp;&nbsp;Abono</a>
+        <a href="paquetes.html" onclick="showSection('paquetes')"><i class="fa-solid fa-boxes-stacked"></i>&nbsp; Paquetes</a>
+        <a href="Tablas.html" onclick="showSection('medicion')"><i class="fa-solid fa-chart-line"></i>&nbsp;&nbsp;Medicion</a>
+        </div>
+        <main style="padding-bottom: 142px;padding-right: 13px;">
+            <i id="btnEditarTipo" class="fa-solid fa-pen-to-square fa-2xl" style="cursor: pointer; margin-left: 810px;margin-top: 100px;padding-top: 20px;"></i>
+            <i id="btnAgregarTipo"class="fa-solid fa-plus fa-2xl"style="cursor: pointer;margin-left:30px;margin-right:30px;"></i>
+            <i id="btnEliminarTipo" class="fa-solid fa-trash fa-2xl"style="cursor: pointer;"></i>
+            <section class="container">
+            <card >
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxj2TPodT4FD28wD0qnWXBbVKOISW_K5422Q&s" alt="">
+                <h2>Habitacion doble</h2>
+                <p>Una habitación con dos camas individuales o una cama doble, diseñada para alojar a dos personas. Ofrece comodidades básicas, como baño privado, televisión y conexión Wi-Fi.</p>
+            </card><br>
+            <card>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9uwm0V4nMZMQXVZkQKKR92qID_8iCM8z1eg&s" alt="">
+                <h2>Habitacion estandar</h2>
+                <p> Una habitación con una cama doble o dos camas individuales. Ofrece un alojamiento cómodo con servicios básicos como baño privado, televisión, aire acondicionado y conexión Wi-Fi.</p>
+            </card><br>
+            <card>
+                <img src="https://img.freepik.com/fotos-premium/habitacion-lujo_940802-117.jpg?w=360" alt="">
+                <h2>Habitacion de lujo</h2>
+                <p>Una habitación espaciosa y elegante, equipada con una cama grande, muebles de alta calidad, baño privado con acabados lujosos, y servicios adicionales como minibar, cafetera y vistas panorámicas.</p>
+            </card>
+        </main>
+        <div id="modalEditarTipo" class="modal">
+            <div class="modal-content">
+                <h2>Editar Tipo de Habitación</h2>
+                <form id="formEditarTipoHabitacion">
+                    <label for="nombreTipoHabitacion">Seleccione el tipo de habitación</label>
+                    <select id="nombreTipoHabitacion" name="nombreTipoHabitacion" required>
+                        <option value="">Habitación de lujo</option>
+                        <option value="">Habitación doble</option>
+                        <option value="">Habitación estándar</option>
+                    </select><br>
+                    <label for="descripcionNueva">Descripción nueva:</label><br>
+                    <textarea id="descripcionNueva"></textarea><br>
+                    <button type="submit" class="btn-guardar">Guardar cambios</button>
+                    <button type="button" class="btn-cancelar" data-modal="modalEditarTipo">Cancelar</button>
+                </form>
+            </div>
+        </div>
+        <div id="modalAgregarTipo" class="modal">
+            <div class="modal-content">
+                <h2>Agregar Tipo de Habitación</h2>
+                <label for="nombreNuevoTipo">Nombre de nuevo tipo</label><br>
+                <input type="text" id="nombreNuevoTipo"><br>
+                <label for="imagenTipoHabitacion">Imagen del tipo de habitación</label><br>
+                <input type="file" id="imagenTipoHabitacion"><br>
+                <label for="descripcionTipoHabitacion">Descripción</label><br>
+                <textarea id="descripcionTipoHabitacion"></textarea><br>
+                <label for="disponible">¿Disponible?</label><br>
+                <input type="checkbox" id="disponible"><br>
+                <button class="btn-guardar">Aceptar</button>
+                <button type="button" class="btn-cancelar" data-modal="modalAgregarTipo">Cancelar</button>
+            </div>
+        </div>
+        <div id="modalEliminarTipo" class="modal">
+            <div class="modal-content">
+                <h2>Eliminar Tipo de Habitación</h2>
+                <label for="nombreTipoEliminar">Seleccione el tipo de habitación</label>
+                <select id="nombreTipoEliminar" required>
+                    <option value="">Habitación de lujo</option>
+                    <option value="">Habitación doble</option>
+                    <option value="">Habitación estándar</option>
+                </select><br>
+                <p>¿Está seguro de que desea eliminar este tipo de habitación?</p>
+                <input type="checkbox" id="confirmarEliminacion">
+                <label for="confirmarEliminacion">Confirmar eliminación</label><br>
+                <button id="btnAceptarEliminarTipo" class="btn-guardar" disabled>Aceptar</button>
+                <button type="button" class="btn-cancelar" data-modal="modalEliminarTipo">Cancelar</button>
+            </div>
+        </div>
+        <script src="tipos.js"></script>
+</body>
+</html>

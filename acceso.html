@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso</title>
+    <link rel="stylesheet" href="acceso.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <div class="icon-container">
+                <i class="fas fa-user-circle"></i>
+            </div>
+            <h1>Iniciar Sesión</h1>
+            <form id="loginForm">
+                <div class="textbox">
+                    <input type="text" placeholder="Usuario" name="username" required>
+                </div>
+                <div class="textbox">
+                    <input type="password" placeholder="Contraseña" name="password" required>
+                </div>
+
+               <a href="dashboard.html"><input type="submit" class="btn" value="Acceder"></a> 
+            </form>
+            <div class="register-link">
+                <p><a href="recuperar.html">¿Olvidaste tu contraseña?</a></p>
+                <p><a href="registro.html">¿No tienes una cuenta? Regístrate aquí</a></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            window.location.href = 'dashboard.html'; // Redirige al dashboard
+        });
+    </script>
+</body>
+</html>

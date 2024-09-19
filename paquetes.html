@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAQUETE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="PQTEstyle.css">
+    <script defer src="PQTEscrip.js"></script>
+</head>
+<body>
+    <header>
+        <button class="toggle-btn" onclick="toggleSidebar()">&#9776;</button>
+        <h1>Addventure</h1>
+        <div class="profile-menu">
+            <button class="profile-btn" onclick="toggleProfileMenu()">
+                <i class="fas fa-user-circle"></i>
+            </button>
+            <div class="profile-dropdown" id="profileDropdown">
+                <a href="#myProfile">Mi perfil</a>
+                <a href="#logout" onclick="logout()">Cerrar sesión</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="sidebar" id="sidebar">
+        <a href="dashboard.html" onclick="showSection('roles')"><i class="fa-solid fa-sitemap"></i>&nbsp;&nbsp;&nbsp;Roles</a>
+        <a href="dashboard.html" onclick="showSection('users')">&nbsp;<i class="fa-solid fa-person"></i>&nbsp;&nbsp;&nbsp;Usuarios</a>
+            <a href="Habitacion.html" onclick="showSection('habitacion')"><i class="fa-solid fa-bed " style="margin-right: 8px;"></i>Habitaciones</a>
+            <a href="Inmuebles.html" onclick="showSection('inmuebles')"><i class="fa-solid fa-chair" style="margin-right: 8px;"></i>&nbsp;&nbsp;Inmuebles</a>
+            <a href="Servicios.html" onclick="showSection('servicios')"><i class="fa-solid fa-person-swimming" style="margin-right: 8px;"></i>&nbsp;Servicios</a>
+        <a href="reserva.html" onclick="showSection('reserva')"><i class="fa-solid fa-house-user">&nbsp;</i>&nbsp;&nbsp;Reserva</a>
+        <a href="reserva.html" onclick="showSection('abono')"><i class="fa-solid fa-money-check-dollar">&nbsp;</i>&nbsp;&nbsp;Abono</a>
+        <a href="paquetes.html" onclick="showSection('paquetes')"><i class="fa-solid fa-boxes-stacked"></i>&nbsp; Paquetes</a>
+        <a href="Tablas.html" onclick="showSection('medicion')"><i class="fa-solid fa-chart-line"></i>&nbsp;&nbsp;Medicion</a>
+    </div>
+
+    <main>
+        
+        <section id="roles" class="content-section active">
+            <h2>Paquetes</h2>
+            <div class="users-controls">
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar Paquetes..." id="searchUserInput">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <button class="add-role-btn" onclick="openModal('createRoleModal')">
+                    <i class="fas fa-plus-circle"></i> Crear paquete
+                </button>
+            </div>
+
+            <section class="recipe-grid">
+                <div class="recipe-card">
+                    <img src="https://img.freepik.com/vector-premium/habitacion-cama-escritorio-escritorio-libreria_895122-430.jpg">
+                    <h2>Paquete 1</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum eligendi natus quasi voluptate modi soluta unde quae voluptas sunt, incidunt laborum asperiores labore, accusamus exercitationem aut quas error excepturi vel?
+                    </p>
+
+                    <div class="UDDLT">
+                        <div class="bot1">
+                            <button class="add-role-btn" onclick="openModal('editRoleModal')">
+                                <i class="fas fa-edit"></i> actualizar
+                            </button>
+                        </div>
+
+                        <div class="bot2">
+                            <button class="add-role-btn" onclick="openModal('deleteRoleModal')">
+                                <i class="fas fa-trash"></i> eliminar
+                            </button>
+                        </div>
+
+                        <div class="permission-item"></div>
+                        <label class="switch">
+                            <input type="checkbox" name="dashboard">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    </div>
+
+                    
+                    
+
+
+                </div>
+
+                <div class="recipe-card">
+                    <img src="https://img.freepik.com/vector-premium/habitacion-cama-escritorio-escritorio-libreria_895122-430.jpg">
+                    <h2>Paquete 2</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, architecto esse. Sed quisquam blanditiis adipisci dicta mollitia voluptas voluptatum aut itaque placeat debitis facilis quod ad quibusdam, beatae modi.</quam></p>
+
+                    <div class="UDDLT">
+                        <div class="bot1">
+                            <button class="add-role-btn" onclick="openModal('editRoleModal')">
+                                <i class="fas fa-edit"></i> actualizar
+                            </button>
+                        </div>
+
+                        <div class="bot2">
+                            <button class="add-role-btn" onclick="openModal('deleteRoleModal')">
+                                <i class="fas fa-trash"></i> eliminar
+                            </button>
+                        </div>
+
+                        <div class="permission-item"></div>
+                        <label class="switch">
+                            <input type="checkbox" name="dashboard">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    </div>
+
+
+                   
+                </div>
+
+                <div class="recipe-card">
+                    <img src="https://img.freepik.com/vector-premium/ilustracion-dibujos-animados-dormitorio-cama-escritorio_895122-425.jpg" >
+                    <h2>Paquete 3</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ipsum saepe eveniet nobis nihil sequi, perspiciatis id, ipsa neque labore fuga, tempora adipisci provident voluptas autem fugit animi veniam accusamus?</p>
+
+                    <div class="UDDLT">
+                        <div class="bot1">
+                            <button class="add-role-btn" onclick="openModal('editRoleModal')">
+                                <i class="fas fa-edit"></i> actualizar
+                            </button>
+                        </div>
+
+                        <div class="bot2">
+                            <button class="add-role-btn" onclick="openModal('deleteRoleModal')">
+                                <i class="fas fa-trash"></i> eliminar
+                            </button>
+                        </div>
+
+                        <div class="permission-item"></div>
+                        <label class="switch">
+                            <input type="checkbox" name="dashboard">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    </div>
+
+                    
+
+                </div>
+
+            </section>
+        </section>
+
+    </main>
+
+    <div id="createRoleModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('createRoleModal')">&times;</span>
+            <h2>Crear Paquete</h2>
+            <form id="createRoleForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="roleName">Nombre de paquete:</label>
+                        <input type="text" id="roleName" name="roleName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="roleStatus">Id habitacion:</label>
+                        <select id="roleStatus" name="roleStatus" required>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="roleStatus">Id servicio:</label>
+                        <select id="roleStatus" class="linea" linea="roleStatus" required>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                
+                    </div>
+                </div>
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="editRoleModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('editRoleModal')">&times;</span>
+            <h2>Editar paquete</h2>
+            <form id="editRoleForm">
+                <input type="hidden" id="editRoleId" name="roleId">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="editRoleName">Nuevo nombre del paquete:</label>
+                        <input type="text" id="editRoleName" name="roleName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editRoleStatus">Estado:</label><br>
+                        <select id="editRoleStatus" name="roleStatus" required>
+                            <option value="activo">Activo</option>
+                            <option value="inactivo">Inactivo</option>
+                        </select>
+                    </div>
+                   
+                    <div class="form-group">
+                        <label for="roleStatus">Nuevo Id habitacion:</label>
+                        <select id="roleStatus" name="roleStatus" required>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="roleStatus">Nuevo Id servicio:</label><br>
+                        <select id="roleStatus" class="linea" linea="roleStatus" required>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                
+                    </div>
+                </div>
+                <button type="submit">Actualizar</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="deleteRoleModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('deleteRoleModal')">&times;</span>
+            <h2>Eliminar paquete</h2>
+            <p>¿Estás seguro de que deseas eliminar este paquete?</p>
+            <button id="confirmDeleteRoleBtn">Eliminar</button>
+            <button onclick="closeModal('deleteRoleModal')">Cancelar</button>
+        </div>
+    </div>
+    
+
+
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>

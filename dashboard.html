@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <script defer src="dashboard.js"></script>
+</head>
+<body>
+    <header>
+        <button class="toggle-btn" onclick="toggleSidebar()">&#9776;</button>
+        <h1>Addventure</h1></i>
+        <div class="profile-menu">
+            <button class="profile-btn" onclick="toggleProfileMenu()">
+                <i class="fas fa-user-circle"></i>
+            </button>
+            <div class="profile-dropdown" id="profileDropdown">
+                <a href="#myProfile">Mi perfil</a>
+                <a href="#logout" onclick="logout()">Cerrar sesión</a>
+            </div>
+        </div>
+    </header>
+    <div class="sidebar" id="sidebar">
+        <a href="dashboard.html" onclick="showSection('roles')"><i class="fa-solid fa-sitemap"></i>&nbsp;&nbsp;&nbsp;Roles</a>
+        <a href="#usuarios" onclick="showSection('users')">&nbsp;<i class="fa-solid fa-person"></i>&nbsp;&nbsp;&nbsp;Usuarios</a>
+            <a href="Habitacion.html" onclick="showSection('habitacion')"><i class="fa-solid fa-bed " style="margin-right: 8px;"></i>Habitaciones</a>
+            <a href="Inmuebles.html" onclick="showSection('inmuebles')"><i class="fa-solid fa-chair" style="margin-right: 8px;"></i>&nbsp;&nbsp;Inmuebles</a>
+            <a href="Servicios.html" onclick="showSection('servicios')"><i class="fa-solid fa-person-swimming" style="margin-right: 8px;"></i>&nbsp;Servicios</a>
+        <a href="reserva.html" onclick="showSection('reserva')"><i class="fa-solid fa-house-user">&nbsp;</i>&nbsp;&nbsp;Reserva</a>
+        <a href="reserva.html" onclick="showSection('abono')"><i class="fa-solid fa-money-check-dollar">&nbsp;</i>&nbsp;&nbsp;Abono</a>
+        <a href="paquetes.html" onclick="showSection('paquetes')"><i class="fa-solid fa-boxes-stacked"></i>&nbsp; Paquetes</a>
+        <a href="Tablas.html" onclick="showSection('medicion')"><i class="fa-solid fa-chart-line"></i>&nbsp;&nbsp;Medicion</a>
+    </div>
+    <main>
+        
+        <section id="roles" class="content-section active">
+            <h2>Roles</h2>
+            <div class="roles-controls">
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar roles..." id="searchRoleInput">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <button class="add-role-btn" onclick="openModal('createRoleModal')">
+                    <i class="fas fa-plus-circle"></i> Crear Rol
+                </button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>IDrol</th>
+                        <th>Nombre Rol</th>
+                        <th>Permisos</th>
+                        <th>Estado</th>
+                        <th>Operaciones</th>
+                    </tr>
+                </thead>
+                <tbody id="rolesTableBody">
+                    <tr>
+                        <td>1</td>
+                        <td>Administrador</td>
+                        <td>Todos los permisos</td>
+                        <td id="status1">Activo</td>
+                        <td class="operations">
+                            <label class="switch">
+                                <input type="checkbox" id="statusCheckbox1" checked>
+                                <span class="slider round"></span>
+                            </label>
+                            <i class="fas fa-edit" onclick="openEditRoleModal(1)"></i>
+                            <i class="fas fa-trash" onclick="openDeleteRoleModal(1)"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Cliente</td>
+                        <td>Todos los permisos</td>
+                        <td id="status1">Activo</td>
+                        <td class="operations">
+                            <label class="switch">
+                                <input type="checkbox" id="statusCheckbox1" checked>
+                                <span class="slider round"></span>
+                            </label>
+                            <i class="fas fa-edit" onclick="openEditRoleModal(1)"></i>
+                            <i class="fas fa-trash" onclick="openDeleteRoleModal(1)"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Recepcionista
+                        </td>
+                        <td>Todos los permisos</td>
+                        <td id="status1">Activo</td>
+                        <td class="operations">
+                            <label class="switch">
+                                <input type="checkbox" id="statusCheckbox1" checked>
+                                <span class="slider round"></span>
+                            </label>
+                            <i class="fas fa-edit" onclick="openEditRoleModal(1)"></i>
+                            <i class="fas fa-trash" onclick="openDeleteRoleModal(1)"></i>
+                        </td>
+                    </tr>
+                    <tr></tr>
+                        <td>4</td>
+                        <td>Administrador</td>
+                        <td>Todos los permisos</td>
+                        <td id="status1">Activo</td>
+                        <td class="operations">
+                            <label class="switch">
+                                <input type="checkbox" id="statusCheckbox1" checked>
+                                <span class="slider round"></span>
+                            </label>
+                            <i class="fas fa-edit" onclick="openEditRoleModal(1)"></i>
+                            <i class="fas fa-trash" onclick="openDeleteRoleModal(1)"></i>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        
+        <section id="users" class="content-section">
+            <h2>Usuarios</h2>
+            <div class="users-controls">
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar usuarios..." id="searchUserInput">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <button class="add-user-btn" onclick="openModal('createUserModal')">
+                    <i class="fas fa-plus-circle"></i> Crear Usuario
+                </button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>IDUsuario</th>
+                        <th>Nombre</th>
+                        <th>Documento</th>
+                        <th>Correo</th>
+                        <th>Rol</th>
+                        <th>Estado</th>
+                        <th>Operaciones</th>
+                    </tr>
+                </thead>
+                <tbody id="usersTableBody">
+                    <tr>
+                        <td>1</td>
+                        <td>Isabela Zapata</td>
+                        <td>1033649611</td>
+                        <td>Isabela@gmail.com</td>
+                        <td>Administrador</td>
+                        <td id="status1">Activo</td>
+                        <td class="operations">
+                            <label class="switch">
+                                <input type="checkbox" id="statusCheckbox1" checked>
+                                <span class="slider round"></span>
+                            </label>
+                            <i class="fas fa-edit" onclick="openEditUserModal(1)"></i>
+                            <i class="fas fa-trash" onclick="openDeleteUserModal(1)"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Victor Colorado</td>
+                        <td>1033649612</td>
+                        <td>Victor@gmail.com</td>
+                        <td>Cliente</td>
+                        <td id="status1">Activo</td>
+                        <td class="operations">
+                            <label class="switch">
+                                <input type="checkbox" id="statusCheckbox1" checked>
+                                <span class="slider round"></span>
+                            </label>
+                            <i class="fas fa-edit" onclick="openEditRoleModal(1)"></i>
+                            <i class="fas fa-trash" onclick="openDeleteRoleModal(1)"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Juan Pablo Medina</td>
+                        <td>1033649613</td>
+                        <td>Juan@gmail.com</td>
+                        <td>Recepcionista</td>
+                        <td id="status1">Activo</td>
+                        <td class="operations">
+                            <label class="switch">
+                                <input type="checkbox" id="statusCheckbox1" checked>
+                                <span class="slider round"></span>
+                            </label>
+                            <i class="fas fa-edit" onclick="openEditRoleModal(1)"></i>
+                            <i class="fas fa-trash" onclick="openDeleteRoleModal(1)"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Carlos Amariles</td>
+                        <td>1033649614</td>
+                        <td>Carlos@gmail.com</td>
+                        <td>Cliente</td>
+                        <td id="status1">Activo</td>
+                        <td class="operations">
+                            <label class="switch">
+                                <input type="checkbox" id="statusCheckbox1" checked>
+                                <span class="slider round"></span>
+                            </label>
+                            <i class="fas fa-edit" onclick="openEditRoleModal(1)"></i>
+                            <i class="fas fa-trash" onclick="openDeleteRoleModal(1)"></i>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    
+    <div id="createRoleModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('createRoleModal')">&times;</span>
+            <h2>Crear Rol</h2>
+            <form id="createRoleForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="roleStatus">Rol:</label>
+                        <select id="roleStatus" name="roleStatus" required>
+                            <option value="activo">Administrador</option>
+                            <option value="inactivo">Cliente</option>
+                            <option value="inactivo">Recepcionista</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="userEmailConfirm">Crear nuevo rol:</label>
+                        <input type="email" id="userEmailConfirm" name="userEmailConfirm" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="roleStatus">Estado:</label>
+                        <select id="roleStatus" name="roleStatus" required>
+                            <option value="activo">Activo</option>
+                            <option value="inactivo">Inactivo</option>
+                        </select>
+                        
+                    </div>
+                </div>
+    
+                <label for="rolePermissions"><h2>Permisos:</h2></label>
+                <div id="permissionsContainer" class="permissions-grid">
+                    <div class="permission-item">
+                        <span>Dashboard</span>
+                        <label class="switch">
+                            <input type="checkbox" name="dashboard">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="permission-item">
+                        <span>Roles</span>
+                        <label class="switch">
+                            <input type="checkbox" name="roles">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="permission-item">
+                        <span>Usuarios</span>
+                        <label class="switch">
+                            <input type="checkbox" name="usuarios">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="permission-item">
+                        <span>Habitaciones</span>
+                        <label class="switch">
+                            <input type="checkbox" name="habitaciones">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="permission-item">
+                        <span>Servicios</span>
+                        <label class="switch">
+                            <input type="checkbox" name="servicios">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="permission-item">
+                        <span>Paquetes</span>
+                        <label class="switch">
+                            <input type="checkbox" name="paquetes">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="permission-item">
+                        <span>Clientes</span>
+                        <label class="switch">
+                            <input type="checkbox" name="clientes">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="permission-item">
+                        <span>Reservas</span>
+                        <label class="switch">
+                            <input type="checkbox" name="reservas">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="permission-item">
+                        <span>Hospedaje</span>
+                        <label class="switch">
+                            <input type="checkbox" name="hospedaje">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+    
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+    
+    <!-- Modal de Edición de Rol -->
+<div id="editRoleModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('editRoleModal')">&times;</span>
+        <h2>Editar Rol</h2>
+        <form id="editRoleForm">
+            <input type="hidden" id="editRoleId" name="roleId">
+            <label for="editRoleName">Nombre del Rol:</label>
+            <input type="text" id="editRoleName" name="roleName" required>
+            
+            <div class="form-group">
+                <label for="editRoleStatus">Estado:</label>
+                <select id="editRoleStatus" name="roleStatus" required>
+                    <option value="activo">Activo</option>
+                    <option value="inactivo">Inactivo</option>
+                </select>
+                <div><button type="submit">Guardar Cambios</button></div>
+            </div>
+        </form>
+    </div>
+</div>
+
+    
+    <div id="deleteRoleModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('deleteRoleModal')">&times;</span>
+            <h2>Eliminar Rol</h2>
+            <p>¿Estás seguro de que deseas eliminar este rol?</p>
+            <button id="confirmDeleteRoleBtn">Eliminar</button>
+            <button onclick="closeModal('deleteRoleModal')">Cancelar</button>
+        </div>
+    </div>
+
+    
+    <div id="createUserModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('createUserModal')">&times;</span>
+            <h2>Crear Usuario</h2>
+            <form id="createUserForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="userEmail">Tipo de documento:</label>
+                        <select id="userStatus" name="userStatus" required>
+                            <option value="activo">T.I</option>
+                            <option value="inactivo">C.C</option>
+                            <option value="inactivo">Pasaporte</option>
+                            <option value="inactivo">Otro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="userEmailConfirm">Documento:</label>
+                        <input type="email" id="userEmailConfirm" name="userEmailConfirm" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="userEmail">Nombre:</label>
+                        <input type="usernombre" id="userNombre" name="userNombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="userEmailConfirm">Correo:</label>
+                        <input type="email" id="userEmailConfirm" name="userEmailConfirm" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="userPassword">Contraseña:</label>
+                        <input type="password" id="userPassword" name="userPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="userPasswordConfirm">Confirmación de contraseña:</label>
+                        <input type="password" id="userPasswordConfirm" name="userPasswordConfirm" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="userRole">Rol:</label>
+                        <select id="userStatus" name="userStatus" required>
+                            <option value="activo">Administrador</option>
+                            <option value="inactivo">Cliente</option>
+                            <option value="inactivo">Recepcionista</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="userStatus">Estado:</label>
+                        <select id="userStatus" name="userStatus" required>
+                            <option value="activo">Activo</option>
+                            <option value="inactivo">Inactivo</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Modal para Editar Usuario -->
+<div id="editUserModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('editUserModal')">&times;</span>
+        <h2>Editar Usuario</h2>
+        <form id="editUserForm">
+            <input type="hidden" id="editUserId" name="userId">
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="editUserDocumentType">Tipo de documento:</label>
+                    <select id="editUserDocumentType" name="userDocumentType" required>
+                        <option value="ti">T.I</option>
+                        <option value="cc">C.C</option>
+                        <option value="passport">Pasaporte</option>
+                        <option value="other">Otro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="editUserDocument">Documento:</label>
+                    <input type="text" id="editUserDocument" name="userDocument" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="editUserName">Nombre:</label>
+                    <input type="text" id="editUserName" name="userName" required>
+                </div>
+                <div class="form-group">
+                    <label for="editUserEmail">Correo:</label>
+                    <input type="email" id="editUserEmail" name="userEmail" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="editUserPassword">Contraseña:</label>
+                    <input type="password" id="editUserPassword" name="userPassword">
+                </div>
+                <div class="form-group">
+                    <label for="editUserPasswordConfirm">Confirmación de contraseña:</label>
+                    <input type="password" id="editUserPasswordConfirm" name="userPasswordConfirm">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="editUserRole">Rol:</label>
+                    <select id="editUserRole" name="userRole" required>
+                        <option value="admin">Administrador</option>
+                        <option value="client">Cliente</option>
+                        <option value="receptionist">Recepcionista</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="editUserStatus">Estado:</label>
+                    <select id="editUserStatus" name="userStatus" required>
+                        <option value="active">Activo</option>
+                        <option value="inactive">Inactivo</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit">Actualizar</button>
+        </form>
+    </div>
+</div>
+
+    
+<!-- Modal para Eliminar Usuario -->
+<div id="deleteUserModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('deleteUserModal')">&times;</span>
+        <h2>Eliminar Usuario</h2>
+        <p>¿Estás seguro de que deseas eliminar este usuario?</p>
+        <button id="confirmDeleteUserBtn">Eliminar</button>
+        <button onclick="closeModal('deleteUserModal')">Cancelar</button>
+    </div>
+</div>

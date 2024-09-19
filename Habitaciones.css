@@ -1,0 +1,1003 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    background-color: #c1e1a7;
+    overflow-x: hidden;
+}
+
+main form{
+    margin-bottom: 40px;
+    text-align: center;
+    margin-top: 70px;
+}
+main{
+    margin-top: 50px;
+    margin-left: -6px;
+    background-color: #C1E1A7;
+    margin-top: 0px;
+    padding-top: 50px;
+    margin-right: -8px;
+    margin-bottom: -30px;
+}
+.Menu{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+.Menu article{
+    box-sizing: border-box;
+}
+.Menu h2{
+    text-align: center;
+    margin-left: 70px;
+    margin-top: 40px;
+    font-family: Arial,sans-serif;
+}
+.Menu .dis{
+    text-align: center;
+    margin-left: 70px;
+    color: rgb(94, 212, 94);
+    margin-top: -10px;
+    margin-bottom: 6px;
+    cursor: pointer;
+}
+.Menu .nodis{
+    text-align: center;
+    margin-left: 70px;
+    color: rgb(212, 94, 94);
+    margin-top: -10px;
+    margin-bottom: 6px;
+    cursor: pointer;
+}
+.Menu img {
+    width: 510px; 
+    height: 500px; 
+    border-radius: 8px;
+    margin-left: 70px;
+    cursor: pointer;
+}
+header {
+    background-color: #1a4a5a;
+    color: white;
+    padding: 5px 10px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: right;
+}
+header button {
+    padding: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-size: 30px;
+    font-family: Arial,sans-serif;
+    font-weight: bold;
+    color: white;
+    background-color: #1a4a5a;
+border: none;
+    cursor: pointer;
+}
+
+header .logo img {
+    height: 40px;
+}
+
+.Menu form button{
+    text-align: center;
+    
+}
+.botones2{
+    margin-top:-28px;
+    text-align: center;
+    position: absolute;
+    margin-left: 630px;
+
+}
+.botones2 button{
+    padding: 10px;
+    margin-left:20px;
+    font-size: 18px;
+    font-family: Arial,sans-serif;
+    font-weight: bold;
+    color: white;
+    background-color: #148d8d;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.botones{
+    text-align: center;
+}
+.botones button{
+    padding: 10px;
+    margin-left: 20px;
+    font-size: 18px;
+    font-family: Arial,sans-serif;
+    font-weight: bold;
+    color: white;
+    background-color: #19afaf;
+    border-radius: 20px;
+}
+.botones2 .elim:hover{
+    background-color:#19afaf;
+    color: black
+}
+.botones2 .edit:hover{
+    background-color: #19afaf;
+    color: black
+}
+.botones2 .agr:hover{
+    background-color: #19afaf;
+    color: black
+}
+.botones .elim:hover{
+    background-color:#19afaf;
+    color: black
+}
+.botones .edit:hover{
+    background-color: #19afaf;
+    color: black
+}
+.elim{
+        display: inline-block;
+}
+.elim:hover {
+        transform: scale(1.1);
+}
+.edit{
+    display: inline-block;
+}
+.edit:hover{
+    transform: scale(1.1);
+}
+.agr{
+    display: inline-block;
+}
+.agr:hover{
+    transform: scale(1.1);
+}
+main form input{
+    width: 150px;
+    height: 20px;
+    padding-right: 90px;
+    font-size: 18px;
+}
+main form input::placeholder{
+    padding-right: 220px;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+
+main form button{
+    height: 35px;
+    text-align: center;
+}
+.buscar {
+    border: none;
+    color: white;
+    padding: 7px 28px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #1a4a5a;
+    transition: box-shadow 0.3s ease-in-out; 
+    text-align: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+.buscar:hover {
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); 
+}
+header img{
+    width: 110px;
+    height: 110px;
+    float: left;
+    margin-top: -150px;
+    margin-left: 500px;
+    border-radius: 60px;
+    
+}
+main select{
+    width: 290px;
+    text-align: center;
+    height: 30px;
+    font-size: 16px;
+    text-align: center;
+}
+main select option{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+footer{
+    background-color: #1a4a5a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: -8px;
+    font-size: 18px;
+    margin-left: -8px;
+    margin-right: -8px;
+    margin-top: 30px;
+}
+/* Estilos para el modal */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.8); 
+}
+
+/* Centrar el contenido del modal */
+.modal-content {
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    width: 50%;
+    max-width: 600px;
+    max-height: 80vh;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    overflow-y: auto;
+}
+
+/* Estilo para el área de texto dentro del modal */
+#additionalInfo {
+    width: 100%;
+    height: 150px;
+    padding: 2px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+    font-size: 16px;
+    overflow-y: auto;
+}
+.modal-content h2{
+    text-align: center;
+}
+.modal-content h3{
+    text-align: center;
+    color: rgb(18, 62, 151);
+}
+.modal-content p{
+    text-align: center;
+}
+.modal-content .inm,.tip,.serv{
+    border: black;
+    border-width: 5px;
+    border-top: 5px;
+    border-style: groove none none none;
+}
+.modal-content form{
+    text-align: center;
+}
+.modal-content .inm form input{
+    padding: 5px;
+}
+.modal-content ul{
+    column-count: 2;
+    list-style: none;
+}
+.modal-content ul button{
+    margin-top: 20px;
+    margin-left: 80px;
+    border: none;
+    color: white;
+    padding: 12px 28px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #148d8d; 
+    transition: box-shadow 0.3s ease-in-out; 
+    text-align: center;
+    justify-content: center;
+}
+.modal-content ul li{
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: black;
+    border-width: 5px;
+    border-top: 5px;
+    border-style: groove groove none none;
+}
+.modal-content ul button:hover{
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); 
+}
+.modal-content .enviar{
+    text-align: center;
+    margin-top: 20px;
+}
+.modal-content .enviar input{
+    padding: 10px;
+    margin-left: 20px;
+    font-size: 18px;
+    font-family: Arial,sans-serif;
+    font-weight: bold;
+    color: white;
+    background-color: #148d8d;
+    text-align: center;
+}
+.enviar input:hover{
+    color: rgb(255, 255, 255);
+        transform: scale(1.1);
+    background-color: #19afaf;
+}
+.modal-room,
+.modal-furniture,
+.modal-services {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4); 
+    padding-top: 60px;
+}
+
+.modal-content-room,
+.modal-content-furniture,
+.modal-content-services {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+.sidebar {
+    width: 250px;
+    background-color: #1a4a5a;
+    padding-top: 120px; /* espacio para el header */
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    align-items: right;
+}
+
+.sidebar.active {
+    transform: translateX(0);
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+    margin: 5px 0;
+    background-color: #1a4a5a;
+    border-radius: 2px;
+    transition: background-color 0.3s;
+    text-align: left;
+}
+
+.sidebar a:hover {
+    background-color: #0e2c40;
+}
+/* Estilos para el modal */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.8); 
+}
+
+/* Centrar el contenido del modal */
+.modal-content {
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    width: 50%;
+    max-width: 600px;
+    max-height: 80vh;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    overflow-y: auto;
+    font-family: Arial, sans-serif;
+}
+
+
+/* Estilo para el área de texto dentro del modal */
+#additionalInfo {
+    width: 100%;
+    height: 150px;
+    padding: 2px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+    font-size: 16px;
+    overflow-y: auto;
+    font-family: Arial, sans-serif;
+}
+.modal-content h2{
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+.modal-content h3{
+    text-align: center;
+    color: rgb(18, 62, 151);
+    font-family: Arial, sans-serif;
+}
+.modal-content p{
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+.modal-content .inm,.tip,.serv{
+    border: black;
+    border-width: 5px;
+    border-top: 5px;
+    border-style: groove none none none;
+    font-family: Arial, sans-serif;
+}
+.modal-content form{
+    text-align: center;
+}
+.modal-content .inm form input{
+    padding: 5px;
+    font-family: Arial, sans-serif;
+}
+.modal-content ul{
+    column-count: 2;
+    list-style: none;
+}
+.modal-content ul button{
+    margin-top: 20px;
+    margin-left: 80px;
+    border: none;
+    color: white;
+    padding: 12px 28px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #1a4a5a; 
+    transition: box-shadow 0.3s ease-in-out; 
+    text-align: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+}
+.modal-content ul li{
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: black;
+    border-width: 5px;
+    border-top: 5px;
+    border-style: groove groove none none;
+    font-family: Arial, sans-serif;
+}
+.modal-content ul button:hover{
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); 
+    font-family: Arial, sans-serif;
+}
+.modal-content .enviar{
+    text-align: center;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+}
+.modal-content .enviar input{
+    padding: 10px;
+    margin-left: 20px;
+    font-size: 18px;
+    font-family: Arial,sans-serif;
+    font-weight: bold;
+    color: white;
+    background-color: #1a4a5a;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+.enviar input:hover{
+    color: rgb(255, 255, 255);
+        transform: scale(1.1);
+    background-color: #19afaf;
+}
+.modal-room,
+.modal-furniture,
+.modal-services {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4); 
+    padding-top: 60px;
+}
+
+.modal-content-room,.modal-content-furniture,.modal-content-services {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+.modal-content-room {
+    text-align: center;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    width: 50%;
+    max-width: 450px;
+    max-height: 80vh;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    overflow-y: auto;
+}
+.modal-content-room label{
+    font-size: 18px;
+    padding: 20px;
+    margin: 20px;
+}
+.modal-content-room h2{
+    padding: 5px;
+    border: rgb(125, 119, 119);
+    border-width: 5px;
+    border-top: 5px;
+    border-style: none none groove none;
+}
+.modal-content-room input,select,textarea{
+    font-size: 15px;
+}
+.modal-content-room input,select,textarea{
+    margin: 10px;
+}
+.next-room{
+    text-align: center;
+    margin-top: 20px;
+    padding: 5px;
+    margin-left: 20px;
+    font-size: 18px;
+    font-family: Arial,sans-serif;
+    font-weight: bold;
+    color: white;
+    background-color: #1a4a5a;
+    text-align: center;
+}
+
+.next-room:hover{
+    color: rgb(255, 255, 255);
+        transform: scale(1.1);
+    background-color: #19afaf;
+}
+.next-room2{
+    text-align: center;
+    margin-top: 20px;
+    padding: 5px;
+    margin-left: 20px;
+    font-size: 18px;
+    font-family: Arial,sans-serif;
+    font-weight: bold;
+    color: white;
+    background-color: #1a4a5a;
+    text-align: center;
+}
+.next-room2:hover{
+    color: rgb(255, 255, 255);
+        transform: scale(1.1);
+    background-color: #19afaf;
+}
+.modal-content-furniture{
+    text-align: center;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    width: 50%;
+    max-width: 450px;
+    max-height: 80vh;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    overflow-y: auto;
+}
+.modal-content-furniture input{
+    column-count: 2;
+    margin: 5px;
+}
+.modal-content-furniture h2{
+    padding: 5px;
+    border: rgb(125, 119, 119);
+    border-width: 5px;
+    border-top: 5px;
+    border-style: none none groove none;
+}
+.modal-content-furniture label{
+    font-size: 20px;
+}
+.modal-content-services{
+    text-align: center;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    width: 50%;
+    max-width: 450px;
+    max-height: 80vh;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    overflow-y: auto;
+}
+.modal-content-services h2{
+    padding: 5px;
+    border: rgb(125, 119, 119);
+    border-width: 5px;
+    border-top: 5px;
+    border-style: none none groove none;
+}
+.modal-content-services input{
+    column-count: 2;
+    margin: 5px;
+}
+.modal-custom {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4); 
+    overflow: auto;
+}
+.contenido-modal {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 500px;
+    font-size: 18px;
+    font-family: Arial,sans-serif;
+}
+.contenido-modal h2{
+    text-align: center;
+    padding: 5px;
+    border: rgb(125, 119, 119);
+    border-width: 5px;
+    border-top: 5px;
+    border-style: none none groove none;
+}
+.btn-cancelar{
+    text-align: center;
+    margin-top: 20px;
+    padding: 5px;
+    margin-left: 100px;
+    font-size: 18px;
+    font-family: Arial,sans-serif;
+    font-weight: bold;
+    color: white;
+    background-color: #1a4a5a;
+    text-align: center;
+}
+.btn-guardar{
+    text-align: center;
+    margin-top: 20px;
+    padding: 5px;
+    margin-left: 20px;
+    font-size: 18px;
+    font-family: Arial,sans-serif;
+    font-weight: bold;
+    color: white;
+    background-color: #1a4a5a;
+    text-align: center;
+}
+.btn-cancelar:hover{
+    color: rgb(255, 255, 255);
+    transform: scale(1.1);
+background-color: #19afaf;
+}
+.btn-guardar:hover{
+    color: rgb(255, 255, 255);
+    transform: scale(1.1);
+background-color: #19afaf;
+}
+.modal-eliminar-habitacion {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow-y: hidden;
+}
+
+.modal-content-eliminar-habitacion {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 500px;
+    font-size: 18px;
+    font-family: Arial,sans-serif;
+}
+.modal-content-eliminar-habitacion select,option{
+    font-size: 18px;
+    font-family: Arial,sans-serif;
+}
+.modal-content-eliminar-habitacion h2{
+    text-align: center;
+    padding: 5px;
+    border: rgb(125, 119, 119);
+    border-width: 5px;
+    border-top: 5px;
+    border-style: none none groove none;
+}
+.botones-eliminar-habitacion {
+    display: flex;
+    justify-content: space-between;
+}
+.modal-content-eliminar-habitacion button{
+    text-align: center;
+    margin-top: 20px;
+    padding: 5px;
+    margin-left: 20px;
+    font-size: 18px;
+    font-family: Arial,sans-serif;
+    font-weight: bold;
+    color: white;
+    background-color: #1a4a5a;
+    text-align: center;
+}
+.modal-content-eliminar-habitacion button:hover{
+    color: rgb(255, 255, 255);
+    transform: scale(1.1);
+background-color: #19afaf;
+}
+.warning-box-eliminar-habitacion {
+    background-color: #ffe0e0;
+    padding: 10px;
+    border: 1px solid red;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+.main .menu .disponible,.nodis h2,h5{
+    font-family: Arial, sans-serif;
+}
+.lbl {
+    display: inline-block;
+    width: 65px;
+    height: 33px;
+    background: #979797;
+    border-radius: 100px;
+    cursor: pointer;
+    position: relative;
+    transition: .2s;
+}
+
+.lbl::after {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 25px;
+    background: #eee;
+    border-radius: 100px;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    transition: .2s;
+}
+
+input[type="checkbox"]:checked + .lbl::after {
+    left: 36px;
+}
+
+input[type="checkbox"]:checked + .lbl {
+    background: #1a4a5a;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.switch-container {
+    margin-left: 300px;
+}
+header .profile-menu {
+    display: flex;
+    gap: 10px;
+    margin-left: 900px; 
+    margin-right: 1000px;
+}
+
+header .profile-menu button {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+header .profile-menu button:hover {
+    text-decoration: underline;
+}
+
+header .dashboard-title {
+    font-size: 1.5em;
+}
+
+/* Estilos para el botón de perfil y el menú desplegable */
+.profile-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: #fff; 
+    margin-right: 80px; /* Ajusta el margen derecho para mover el perfil más a la derecha */
+}
+
+.profile-dropdown {
+    display: none;
+    position: absolute;
+    top: 90%;
+    right: 32px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 4 2px 8px rgba(0,0,0,0.1);
+    z-index: 1000;
+    min-width: 150px; /* Ajusta el ancho mínimo si es necesario */
+}
+
+.profile-dropdown a {
+    display: flex;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px solid #ddd; /* Línea divisoria entre los elementos */
+}
+
+.profile-dropdown a:last-child {
+    border-bottom: none; /* Elimina la línea divisoria del último elemento */
+}
+
+.profile-dropdown a:hover {
+    background-color: #f0f0f0;
+}
+
+.profile-menu:hover .profile-dropdown {
+    display: block; /* Muestra el menú cuando se pasa el cursor sobre el perfil */
+}
+/* Contenedor principal con flexbox */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px;
+    background-color: #C1E1A7; /* Fondo general */
+    margin-right: -14px;
+}
+
+  /* Estilo para las tarjetas */
+ card{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    width: 500px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    
+  }
+  
+  
+  /* Imagen en las tarjetas */
+  card img {
+    width: 400px;
+    height: 250px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* Título en las tarjetas */
+  card h2 {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px;
+    font-family: Arial,sans-serif;
+  }
+  card p{
+    font-family: Arial, sans-serif;
+  }
+  /* Input y label dentro de las tarjetas */
+  card label {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 5px;
+    font-family: Arial, sans-serif;
+  }
+  
+  card input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    margin-top: 5px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Responsive: para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    card {
+      width: 90%;
+      margin-bottom: 20px;
+    }
+  }
+  .search-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    margin-bottom: -60px;
+}
+
+.search-box {
+    width: 400px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.search-box input[type="text"] {
+    border: none;
+    outline: none;
+    flex: 1;
+    padding-left: 10px;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.search-box button {
+    background-color: #1a4a5a;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.search-box button:hover {
+    background-color: #19afaf;
+}
+  
